@@ -9,25 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MainComponent = (function () {
-    function MainComponent() {
+var AppComponent = (function () {
+    function AppComponent() {
+        this.meals = [];
+        this.selectedMeal = null;
     }
-    //this.names.push("mkjj");
-    MainComponent.prototype.addTask = function (meal) {
-        // console.log(meal.name,meal.calories, meal.details);
+    AppComponent.prototype.addTask = function (meal) {
         this.meals.push(meal);
     };
-    MainComponent = __decorate([
+    AppComponent.prototype.finishedEditingMeal = function () {
+        this.selectedMeal = null;
+    };
+    AppComponent = __decorate([
         core_1.Component({
             selector: 'my-div',
-            template: '<div class="container">' +
-                '<new-meal (newMealClick)="addTask($event)"></new-meal>' +
-                '<meal-list [childMealList]="meals"></meal-list>' +
-                '</div>'
+            template: "\n\t<div class=\"container-fluid\">\n\t<div class='row'>\n\t\t<div class='col-md-4'>\n\t\t\t<new-meal (newMealClick)=\"addTask($event)\"></new-meal>\n\t\t</div>\n\t</div>\n\t<meal-list [childMealList]=\"meals\"></meal-list>\n\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], MainComponent);
-    return MainComponent;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.MainComponent = MainComponent;
+exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

@@ -4,18 +4,27 @@ import { MealObject } from './mealobj.model';
 
 @Component({
 	selector:'my-div',
-	template:
-	'<div class="container">'+
-	'<new-meal (newMealClick)="addTask($event)"></new-meal>'+
-	'<meal-list [childMealList]="meals"></meal-list>'+
-	'</div>'
+	template:`
+	<div class="container-fluid">
+	<div class='row'>
+		<div class='col-md-4'>
+			<new-meal (newMealClick)="addTask($event)"></new-meal>
+		</div>
+	</div>
+	<meal-list [childMealList]="meals"></meal-list>
+	</div>
+	`
 })
 
-export class MainComponent{
-	public meals: MealObject[];
-	//this.names.push("mkjj");
+export class AppComponent{
+	public meals: MealObject[]=[];
+
 	addTask(meal: MealObject) {
-		// console.log(meal.name,meal.calories, meal.details);
     	this.meals.push(meal);
+  	}
+  	selectedMeal: MealObject = null;
+
+  	finishedEditingMeal(){
+  		this.selectedMeal=null;
   	}
 }

@@ -25,20 +25,7 @@ var NewMealComponent = (function () {
     NewMealComponent = __decorate([
         core_1.Component({
             selector: 'new-meal',
-            template: '<h1>New Meal</h1>' +
-                '<div>' +
-                '<label>Name:</label>' +
-                '<input #newmealname>' +
-                '<label>Calories:</label>' +
-                '<input #newmealcalvalue>' +
-                '<label>Details:</label>' +
-                '<input #newmealdetails>' +
-                '<button (click)="addMealButtonClick(newmealname.value, newmealcalvalue.value, newmealdetails.value);' +
-                'newmealname.value=\'\';' +
-                'newmealcalvalue.value=\'\';' +
-                'newmealdetails.value=\'\' ">' +
-                'Add Meal</button>' +
-                '</div>'
+            template: "\n\t<div>\n\t\t<h1 class='h1' text='success'>New Meal</h1>\n\t\t<div class='form-group'>\n\t\t\t<label>Name:</label>\n\t\t\t<input class='form-control' #newmealname>\n\t\t\t<label>Calories:</label>\n\t\t\t<input class='form-control' #newmealcalvalue>\n\t\t\t<label>Details:</label>\n\t\t\t<input class='form-control' #newmealdetails>\n\t\t\t<button class='btn-success' (click)=\"addMealButtonClick(newmealname.value, newmealcalvalue.value, newmealdetails.value);\n\t\t\tnewmealname.value='';\n\t\t\tnewmealcalvalue.value='';\n\t\t\tnewmealdetails.value=''\">\n\t\t\tAdd Meal</button>\n\t\t\t</div>\n\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], NewMealComponent);

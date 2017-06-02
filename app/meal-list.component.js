@@ -11,15 +11,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var MealListComponent = (function () {
     function MealListComponent() {
+        this.selectedOption = 0;
+        this.editBoolean = new core_1.EventEmitter();
     }
+    MealListComponent.prototype.makeMealEditable = function (meal) {
+        meal.edit = true;
+        //console.log(meal.name);
+        this.editBoolean.emit(meal);
+    };
+    MealListComponent.prototype.removeMeal = function (indextodelete) {
+        this.childMealList.splice(indextodelete, 1);
+    };
+    MealListComponent.prototype.onChange = function (option) {
+        this.selectedOption = option;
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
     ], MealListComponent.prototype, "childMealList", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], MealListComponent.prototype, "editBoolean", void 0);
     MealListComponent = __decorate([
         core_1.Component({
             selector: 'meal-list',
-            template: "\n    <div *ngFor=\"let meal of childMealList\">\n      <p>{{ meal.name}}</p>\n    </div>\n  "
+            template: "\n\t<div class=\"col-md-5\">\n\t\t<select class='form-group' (change)=\"onChange($event.target.value)\">\n\t      <option value=\"0\" selected>All Food</option>\n\t      <option value=\"1\">High Calories</option>\n\t      <option value=\"2\">Low Calories</option>\n\t    </select>\n\t    <div *ngFor=\"let meal of childMealList|foodfilter:selectedOption; let i=index\">\n\t      <p>Meal Name: {{ meal.name}}</p>\n\t      <p>No.of.Calories: {{ meal.calories}}</p>\n\t      <p>Meal Details: {{ meal.details}}</p>\n\t      <button class='btn-primary' (click)=\"makeMealEditable(meal)\">Edit</button>\n\t      <button class='btn-primary' (click)=\"removeMeal(i)\">Remove</button>\n\t      <edit-meal\n\t      *ngIf=\"meal.edit\"\n\t      [childSelectedMeal]=meal\n\t      (done)=\"finishedEditing()\"\n\t      ></edit-meal>\n\t    </div>\n\t</div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MealListComponent);

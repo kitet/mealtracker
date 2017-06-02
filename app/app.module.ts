@@ -1,9 +1,11 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MainComponent }   from './app.component';
+import { AppComponent }   from './app.component';
 import { NewMealComponent }   from './new-meal.component';
 import { FormsModule }   from '@angular/forms';
 import { MealListComponent } from './meal-list.component';
+import { EditMealComponent } from './edit-meal.component';
+import { MealFilterPipe } from './foodfilter.pipe';
 
 
 @NgModule({
@@ -12,11 +14,13 @@ import { MealListComponent } from './meal-list.component';
   		FormsModule
   ],
   declarations: [ 
-  		MainComponent,
+  		AppComponent,
 		NewMealComponent,
-		MealListComponent
+		MealListComponent,
+		EditMealComponent,
+		MealFilterPipe
   ],
-  bootstrap:    [ MainComponent ]
+  bootstrap:    [ AppComponent ]
 })
 
 export class AppModule { }

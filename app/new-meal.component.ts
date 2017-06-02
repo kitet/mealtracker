@@ -3,20 +3,24 @@ import { MealObject } from './mealobj.model';
 
 @Component({
 	selector: 'new-meal',
-	template: '<h1>New Meal</h1>'+
-	'<div>'+
-		'<label>Name:</label>'+
-		'<input #newmealname>'+
-		'<label>Calories:</label>'+
-		'<input #newmealcalvalue>'+
-		'<label>Details:</label>'+
-		'<input #newmealdetails>'+
-		'<button (click)="addMealButtonClick(newmealname.value, newmealcalvalue.value, newmealdetails.value);'+
-		'newmealname.value=\'\';'+
-		'newmealcalvalue.value=\'\';'+
-		'newmealdetails.value=\'\' ">'+
-		'Add Meal</button>'+
-	'</div>'
+	template: `
+	<div>
+		<h1 class='h1' text='success'>New Meal</h1>
+		<div class='form-group'>
+			<label>Name:</label>
+			<input class='form-control' #newmealname>
+			<label>Calories:</label>
+			<input class='form-control' #newmealcalvalue>
+			<label>Details:</label>
+			<input class='form-control' #newmealdetails>
+			<button class='btn-success' (click)="addMealButtonClick(newmealname.value, newmealcalvalue.value, newmealdetails.value);
+			newmealname.value='';
+			newmealcalvalue.value='';
+			newmealdetails.value=''">
+			Add Meal</button>
+			</div>
+	</div>
+	`
 })
 
 //will have inputs to collect data

@@ -14,6 +14,8 @@ var app_component_1 = require('./app.component');
 var new_meal_component_1 = require('./new-meal.component');
 var forms_1 = require('@angular/forms');
 var meal_list_component_1 = require('./meal-list.component');
+var edit_meal_component_1 = require('./edit-meal.component');
+var foodfilter_pipe_1 = require('./foodfilter.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,11 +26,13 @@ var AppModule = (function () {
                 forms_1.FormsModule
             ],
             declarations: [
-                app_component_1.MainComponent,
+                app_component_1.AppComponent,
                 new_meal_component_1.NewMealComponent,
-                meal_list_component_1.MealListComponent
+                meal_list_component_1.MealListComponent,
+                edit_meal_component_1.EditMealComponent,
+                foodfilter_pipe_1.MealFilterPipe
             ],
-            bootstrap: [app_component_1.MainComponent]
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

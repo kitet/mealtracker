@@ -1,5 +1,5 @@
 {
-  "name": "angular2project",
+  "name": "mealtracker",
   "version": "1.0.0",
   "description": "site that fethches latest news on user request",
   "main": "index.js",
@@ -67,8 +67,7 @@
     "angular2-in-memory-web-api": "0.0.18",
     "bootstrap": "^3.3.6"
   },
-  "repository": {
-  },
+  "repository": {},
   "bugs": {
     "url": "https://github.com/kitet/week1/issues"
   },
